@@ -13,7 +13,7 @@ struct Record {
 };
 
 //function which returns Record struct of each sorting algorithm, passing the sorting function as a pointer
-Record getRecord(int a[], int n, void (*sortFunction)(int[], int, int&));
+Record getRecord(int a[], int n, void (*sortFunctionCmp)(int[], int, int&), void (*sortFunction)(int[], int));
 
 // Prototype for original functions
 void selectionSort(int a[], int n);
