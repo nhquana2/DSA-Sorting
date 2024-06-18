@@ -5,10 +5,10 @@ Record getRecord(int a[], int n, void (*sortFunctionCmp)(int[], int, int&), void
     record.comparison = 0;
     record.time = 0;
     sortFunctionCmp(a, n, record.comparison);
-    clock_t start, end;
-    start = clock();
+    auto start = high_resolution_clock::now();
     sortFunction(a, n);
-    end = clock();
-    record.time = (end - start) * 1000 / CLOCKS_PER_SEC;
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    record.time = duration.count();
     return record;
 }

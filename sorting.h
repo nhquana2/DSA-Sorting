@@ -6,11 +6,14 @@
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
+#include <chrono>
+
 using namespace std;
+using namespace std::chrono;
 
 struct Record {
     int comparison;
-    int time; // in milliseconds
+    long long time; // in nanoseconds
 };
 
 //function which returns Record struct of each sorting algorithm, passing the sorting function as a pointer
