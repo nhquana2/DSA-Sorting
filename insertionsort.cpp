@@ -20,14 +20,14 @@ void insertionSort(int a[], int n) {
 // Function with comparision counter
 void insertionSort(int a[], int n, int &comparision) {
     comparision = 0;
-    
+
     int i, j, key;
 	for (i = 1; ++comparision && i < n; i++)
 	{
 		key = a[i];
 		j = i - 1;
 
-		while (++comparision && j >= 0 && a[j] > key)
+		while ((++comparision && j >= 0) && (++comparision && a[j] > key))
 		{
 			a[j + 1] = a[j];
 			j--;
