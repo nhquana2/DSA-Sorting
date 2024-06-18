@@ -71,47 +71,47 @@ void flashSort(int a[], int n){
     }
 }
 
-//comparision counter version
+//comparison counter version
 
-void flashSort(int a[], int n, int& comparision){
-    if (++comparision && n <= 1)
+void flashSort(int a[], int n, int& comparison){
+    if (++comparison && n <= 1)
         return;
     //step 1
     int m = n * 0.45;
-    if (++comparision && m <= 2)
+    if (++comparison && m <= 2)
         m = 2;
 
-    for (int i = 0; ++comparision && i < m; ++i)
+    for (int i = 0; ++comparison && i < m; ++i)
         bucket[i] = 0;
 
     int max = a[0], min = a[0];
 
-    for (int i = 1; ++comparision && i < n; ++i){
-        if (++comparision && max < a[i]) max = a[i];
-        else if (++comparision && min > a[i]) min = a[i];
+    for (int i = 1; ++comparison && i < n; ++i){
+        if (++comparison && max < a[i]) max = a[i];
+        else if (++comparison && min > a[i]) min = a[i];
     }
 
-    if (++comparision && max == min)
+    if (++comparison && max == min)
         return;
 
-    for (int i = 0; ++comparision && i < n; ++i)
+    for (int i = 0; ++comparison && i < n; ++i)
         ++bucket[getK(a[i], m, max, min)];
-    for (int i = 1; ++comparision && i < m; ++i)
+    for (int i = 1; ++comparison && i < m; ++i)
         bucket[i] += bucket[i - 1];
 
     //step 2
     int count = 0;
     int i = 0;
 
-    while (++comparision && count < n){
+    while (++comparison && count < n){
         int k = getK(a[i], m, max, min);
 
-        while (++comparision && i >= bucket[k])
+        while (++comparison && i >= bucket[k])
             k = getK(a[++i], m, max, min);
 
         int z = a[i];
 
-        while (++comparision && i != bucket[k]){
+        while (++comparison && i != bucket[k]){
             k = getK(z, m, max, min);
 
             int y = a[bucket[k] - 1];
@@ -122,11 +122,11 @@ void flashSort(int a[], int n, int& comparision){
         }
     }
     //step 3
-    for (int k = 1; ++comparision && k < m; ++k){
-        for (int i = bucket[k] - 2; ++comparision && i >= bucket[k - 1]; --i){
-            if (++comparision && a[i] > a[i + 1]){
+    for (int k = 1; ++comparison && k < m; ++k){
+        for (int i = bucket[k] - 2; ++comparison && i >= bucket[k - 1]; --i){
+            if (++comparison && a[i] > a[i + 1]){
                 int t = a[i], j = i;
-                while (++comparision && t > a[j + 1]){
+                while (++comparison && t > a[j + 1]){
                     a[j] = a[j + 1];
                     ++j;
                 }

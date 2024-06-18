@@ -38,38 +38,38 @@ void mergeSort(int a[], int n) {
     MergeSort(a, 0, n - 1);
 }
 
-//comparision counter version
+//comparison counter version
 
-void Merge(int a[], int l, int mid, int r, int &comparision) {
+void Merge(int a[], int l, int mid, int r, int &comparison) {
     int* arr = new int[r - l + 1];
     int i = l, j = mid + 1, k = 0;
-    while (++comparision && i <= mid && ++comparision && j <= r){
-        if (++comparision && a[i] < a[j])
+    while (++comparison && i <= mid && ++comparison && j <= r){
+        if (++comparison && a[i] < a[j])
                 arr[k++] = a[i++];
         else
                 arr[k++] = a[j++];
         }
-    while (++comparision && i <= mid){
+    while (++comparison && i <= mid){
             arr[k++] = a[i++];
     }
-    while (++comparision && j <= r){
+    while (++comparison && j <= r){
             arr[k++] = a[j++];
     }
 
-    for (int i = 0; ++comparision && i < k; i++){
+    for (int i = 0; ++comparison && i < k; i++){
         a[l++] = arr[i];
     }
 }
 
-void MergeSort(int a[], int l, int r, int& comparision) {
-        if (++comparision && l >= r) return;
+void MergeSort(int a[], int l, int r, int& comparison) {
+        if (++comparison && l >= r) return;
 
         int mid = (l + r) / 2;
-        MergeSort(a, l, mid, comparision);
-        MergeSort(a, mid + 1, r, comparision);
-        Merge(a, l, mid, r, comparision);
+        MergeSort(a, l, mid, comparison);
+        MergeSort(a, mid + 1, r, comparison);
+        Merge(a, l, mid, r, comparison);
 }
 
-void mergeSort(int a[], int n, int &comparision){
-    MergeSort(a, 0, n - 1, comparision);
+void mergeSort(int a[], int n, int &comparison){
+    MergeSort(a, 0, n - 1, comparison);
 }

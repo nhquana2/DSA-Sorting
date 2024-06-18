@@ -15,16 +15,16 @@ void insertionSort(int a[], int n) {
     }
 }
 
-// Function with comparision counter
-void insertionSort(int a[], int n, int &comparision) {
-    comparision = 0;
+// Function with comparison counter
+void insertionSort(int a[], int n, int &comparison) {
+    comparison = 0;
 
     int i, j, key;
-	for (i = 1; ++comparision && i < n; i++) {
+	for (i = 1; ++comparison && i < n; i++) {
 		key = a[i];
 		j = i - 1;
 
-		while ((++comparision && j >= 0) && (++comparision && a[j] > key)) {
+		while ((++comparison && j >= 0) && (++comparison && a[j] > key)) {
 			a[j + 1] = a[j];
 			j--;
 		}

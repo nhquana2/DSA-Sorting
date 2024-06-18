@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
     // Record rs = getRecord(a, n, flashSort, flashSort);
 
     // printArr(a, 8);
-    // cout << endl << "flash sort doneee with running time " << rs.time << " and " << rs.comparision << " comparisions";
+    // cout << endl << "flash sort doneee with running time " << rs.time << " and " << rs.comparison << " comparisons";
 
     return 0;
 }

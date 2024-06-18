@@ -9,7 +9,7 @@
 using namespace std;
 
 struct Record {
-    int comparision;
+    int comparison;
     int time; // in milliseconds
 };
 
@@ -29,16 +29,16 @@ void countingSort(int a[], int n);
 void radixSort(int a[], int n);
 void flashSort(int a[], int n);
 
-// Prototype for functions with comparision counter
-void selectionSort(int a[], int n, int &comparision);
-void insertionSort(int a[], int n, int &comparision);
-void bubbleSort(int a[], int n, int &comparision);
-void shakerSort(int a[], int n, int &comparision);
-void shellSort(int a[], int n, int &comparision);
-void heapSort(int a[], int n, int &comparision);
-void mergeSort(int a[], int n, int &comparision);
-void quickSort(int a[], int n, int &comparision);
-void countingSort(int a[], int n, int &comparision);
-void radixSort(int a[], int n, int &comparision);
-void flashSort(int a[], int n, int &comparision);
+// Prototype for functions with comparison counter
+void selectionSort(int a[], int n, int &comparison);
+void insertionSort(int a[], int n, int &comparison);
+void bubbleSort(int a[], int n, int &comparison);
+void shakerSort(int a[], int n, int &comparison);
+void shellSort(int a[], int n, int &comparison);
+void heapSort(int a[], int n, int &comparison);
+void mergeSort(int a[], int n, int &comparison);
+void quickSort(int a[], int n, int &comparison);
+void countingSort(int a[], int n, int &comparison);
+void radixSort(int a[], int n, int &comparison);
+void flashSort(int a[], int n, int &comparison);
 

@@ -2,9 +2,9 @@
 
 Record getRecord(int a[], int n, void (*sortFunctionCmp)(int[], int, int&), void (*sortFunction)(int[], int)) {
     Record record;
-    record.comparision = 0;
+    record.comparison = 0;
     record.time = 0;
-    sortFunctionCmp(a, n, record.comparision);
+    sortFunctionCmp(a, n, record.comparison);
     clock_t start, end;
     start = clock();
     sortFunction(a, n);
