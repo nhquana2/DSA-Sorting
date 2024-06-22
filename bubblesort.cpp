@@ -1,10 +1,5 @@
 #include "sorting.h"
 
-void swap(int &a, int &b) {
-    int tmp = a;
-    a = b;
-    b = tmp;
-}
 
 void bubbleSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
