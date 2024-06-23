@@ -13,8 +13,8 @@ int main(int argc, char *argv[]) {
     cout << "hello world\n";
     int a[] = {5, 4, 999, 3, 2, 1, -100, 1000};
 
-    Record record = getRecord(a, 8, radixSort, radixSort);
-    cout << "Sort\n";
+    Record record = getRecord(a, 8, flashSort, flashSort);
+    cout << "Flash Sort\n";
     cout << "Comparisons: " << record.comparison << endl;
     cout << "Time: " << record.time << " nanoseconds" << endl;
     printArr(a, 8);
