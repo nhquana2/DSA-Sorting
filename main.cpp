@@ -17,13 +17,13 @@ int main(int argc, char *argv[]) {
     Record record = getRecord(a, n, bubbleSort, bubbleSort);
     cout << "Bubble Sort (sorted)\n";
     cout << "Comparisons: " << record.comparison << endl;
-    cout << "Time: " << record.time << " micro" << endl;
+    cout << "Time: " << record.time << " milli" << endl;
 
     GenerateData(a, n, 2);
     record = getRecord(a, n, bubbleSort, bubbleSort);
     cout << "Bubble Sort (reverse)\n";
     cout << "Comparisons: " << record.comparison << endl;
-    cout << "Time: " << record.time << " micro" << endl;
+    cout << "Time: " << record.time << " milli" << endl;
 
     //printArr(a, n);
 

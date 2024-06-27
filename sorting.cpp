@@ -16,7 +16,7 @@ Record getRecord(int a[], int n, void (*sortFunctionCmp)(int[], int, long long&)
     auto start = high_resolution_clock::now();
     sortFunction(b, n);
     auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop - start);
+    auto duration = duration_cast<milliseconds>(stop - start);
     record.time = duration.count();
     delete[] b;
     return record;
