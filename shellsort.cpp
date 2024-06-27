@@ -15,7 +15,7 @@ void shellSort(int a[], int n) {
     }
 }
 
-void shellSort(int a[], int n, int &comparison) {
+void shellSort(int a[], int n, long long &comparison) {
     comparison = 0;
     for (int gap = n / 2; ++comparison && gap > 0; gap /= 2) {
         for (int i = gap; ++comparison && i < n; i++) {

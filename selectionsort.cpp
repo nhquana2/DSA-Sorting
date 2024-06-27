@@ -14,7 +14,7 @@ void selectionSort(int a[], int n) {
     }
 }
 
-void selectionSort(int a[], int n, int &comparison) {
+void selectionSort(int a[], int n, long long &comparison) {
     comparison = 0;
     for (int i = 0; ++comparison && i < n - 1; i++) {
         int mn_index = i;

@@ -23,7 +23,7 @@ void shakerSort(int a[], int n) {
 	}
 }
 
-void shakerSort(int a[], int n, int& comparison) {
+void shakerSort(int a[], int n, long long& comparison) {
     comparison = 0;
 	int left = 0;
 	int right = n - 1;

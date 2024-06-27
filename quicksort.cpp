@@ -48,7 +48,7 @@ void quickSort(int a[], int n) {
 
 
 // Function with comparison counter
-int partition(int a[], int l, int r, int &comparison) {
+int partition(int a[], int l, int r, long long &comparison) {
     int p = r;  
     r = r - 1;        
 
@@ -74,7 +74,7 @@ int partition(int a[], int l, int r, int &comparison) {
     return l;
 }
 
-void QuickSort(int a[], int l, int r, int &comparison) {
+void QuickSort(int a[], int l, int r, long long &comparison) {
     if (++comparison && l >= r) return;
  
     int p = partition(a, l, r, comparison);
@@ -83,7 +83,7 @@ void QuickSort(int a[], int l, int r, int &comparison) {
     QuickSort(a, p + 1, r, comparison);
 }
 
-void quickSort(int a[], int n, int &comparison) {
+void quickSort(int a[], int n, long long &comparison) {
     comparison = 0;
     QuickSort(a, 0, n - 1, comparison);
 }

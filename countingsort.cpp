@@ -31,7 +31,7 @@ void countingSort(int a[], int n) {
     delete[] o;
 }
 
-void countingSort(int a[], int n, int& comparison) {
+void countingSort(int a[], int n, long long& comparison) {
     comparison = 0;
     int maxx = INT_MIN;
     int minn = INT_MAX;

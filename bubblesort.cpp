@@ -12,7 +12,7 @@ void bubbleSort(int a[], int n) {
 
 //comparison counter version
 
-void bubbleSort(int a[], int n, int &comparison) {
+void bubbleSort(int a[], int n, long long &comparison) {
     for (int i = 1; ++comparison && i < n; i++) {
         for (int j = n - 1; ++comparison && j >= i; j--) {
             if (++comparison && a[j] < a[j - 1])

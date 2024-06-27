@@ -39,7 +39,7 @@ void heapSort(int a[], int n) {
 
 //Comparison version
 
-void maxHeapify(int a[], int i, int n, int &comparison) {
+void maxHeapify(int a[], int i, int n, long long &comparison) {
     int l = 2*i + 1;
     int r = 2*i + 2;
     int mx = i;
@@ -58,13 +58,13 @@ void maxHeapify(int a[], int i, int n, int &comparison) {
     }
 }
 
-void buildMaxHeap(int a[], int n, int &comparison) {
+void buildMaxHeap(int a[], int n, long long &comparison) {
     for (int i = (n/2)-1; ++comparison && i >= 0; --i) {
         maxHeapify(a, i, n, comparison);
     }
 }
 
-void heapSort(int a[], int n, int &comparison) {
+void heapSort(int a[], int n, long long &comparison) {
     comparison = 0;
     buildMaxHeap(a, n, comparison);
     int sz = n;

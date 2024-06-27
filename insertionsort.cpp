@@ -16,7 +16,7 @@ void insertionSort(int a[], int n) {
 }
 
 // Function with comparison counter
-void insertionSort(int a[], int n, int &comparison) {
+void insertionSort(int a[], int n, long long &comparison) {
     comparison = 0;
 
     int i, j, key;

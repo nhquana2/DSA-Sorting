@@ -42,7 +42,7 @@ void mergeSort(int a[], int n) {
 
 //comparison counter version
 
-void Merge(int a[], int l, int mid, int r, int &comparison) {
+void Merge(int a[], int l, int mid, int r, long long &comparison) {
     int* arr = new int[r - l + 1];
     int i = l, j = mid + 1, k = 0;
 
@@ -64,7 +64,7 @@ void Merge(int a[], int l, int mid, int r, int &comparison) {
     }
 }
 
-void MergeSort(int a[], int l, int r, int& comparison) {
+void MergeSort(int a[], int l, int r, long long& comparison) {
         if (++comparison && l >= r) 
             return;
 
@@ -74,6 +74,6 @@ void MergeSort(int a[], int l, int r, int& comparison) {
         Merge(a, l, mid, r, comparison);
 }
 
-void mergeSort(int a[], int n, int &comparison) {
+void mergeSort(int a[], int n, long long &comparison) {
     MergeSort(a, 0, n - 1, comparison);
 }

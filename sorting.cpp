@@ -1,6 +1,6 @@
 #include "sorting.h"
 
-Record getRecord(int a[], int n, void (*sortFunctionCmp)(int[], int, int&), void (*sortFunction)(int[], int)) {
+Record getRecord(int a[], int n, void (*sortFunctionCmp)(int[], int, long long&), void (*sortFunction)(int[], int)) {
     Record record;
     record.comparison = 0;
     record.time = 0;

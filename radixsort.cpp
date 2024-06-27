@@ -16,7 +16,7 @@ int getMin(int a[], int n)
             minn = a[i];
     return minn;
 }
-void countingSort(int a[], int n, int exp, int minn, int& comparison) {
+void countingSort(int a[], int n, int exp, int minn, long long& comparison) {
     int* o = new int[n];
     int c[10] = {0};
     
@@ -46,7 +46,7 @@ void radixSort(int a[], int n) {
     }
     
     int maxx = getMax(a, n);
-    int temp = 0;
+    long long temp = 0;
     for (int exp = 1; maxx / exp > 0; exp *= 10)
         countingSort(shiftedArr, n, exp, minn, temp);
     
@@ -56,7 +56,7 @@ void radixSort(int a[], int n) {
     
     delete[] shiftedArr;
 }
-void radixSort(int a[], int n, int& comparison) {
+void radixSort(int a[], int n, long long& comparison) {
     int minn = getMin(a, n);
     
     int* shiftedArr = new int[n];

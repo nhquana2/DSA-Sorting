@@ -73,7 +73,7 @@ void flashSort(int a[], int n) {
 
 // Comparison counter version
 
-void flashSort(int a[], int n, int& comparison) {
+void flashSort(int a[], int n, long long& comparison) {
     if (++comparison && n <= 1)
         return;
 
