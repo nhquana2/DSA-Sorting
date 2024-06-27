@@ -2,22 +2,30 @@
 
 using namespace std;
 
-void printArr(int a[], int n){
+void printArr(int a[], int n) {
     for (int i = 0; i < n; i++){
         cout << a[i] << " ";
     }
+    cout << "\n";
 }
 
 int main(int argc, char *argv[]) {
-    //testing only
-    cout << "hello world\n";
-    int a[] = {5, 4, 999, 3, 2, 1, -100, 1000};
+    int n = 1000;
+    int *a = new int[n];
 
-    Record record = getRecord(a, 8, flashSort, flashSort);
-    cout << "Flash Sort\n";
+    GenerateData(a, n, 1);
+    Record record = getRecord(a, n, bubbleSort, bubbleSort);
+    cout << "Bubble Sort (sorted)\n";
     cout << "Comparisons: " << record.comparison << endl;
-    cout << "Time: " << record.time << " nanoseconds" << endl;
-    printArr(a, 8);
+    cout << "Time: " << record.time << " micro" << endl;
+
+    GenerateData(a, n, 2);
+    record = getRecord(a, n, bubbleSort, bubbleSort);
+    cout << "Bubble Sort (reverse)\n";
+    cout << "Comparisons: " << record.comparison << endl;
+    cout << "Time: " << record.time << " micro" << endl;
+
+    //printArr(a, n);
 
     return 0;
 }

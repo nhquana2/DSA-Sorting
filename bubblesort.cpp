@@ -13,10 +13,10 @@ void bubbleSort(int a[], int n) {
 //comparison counter version
 
 void bubbleSort(int a[], int n, long long &comparison) {
-    for (int i = 1; ++comparison && i < n; i++) {
-        for (int j = n - 1; ++comparison && j >= i; j--) {
-            if (++comparison && a[j] < a[j - 1])
-                swap(a[j], a[j - 1]);
+    for (int i = 0; ++comparison && i < n - 1; i++) {
+        for (int j = 0; ++comparison && j < n - 1 - i; j++) {
+            if (++comparison && a[j+1] < a[j])
+                swap(a[j+1], a[j]);
         }
     }
 }

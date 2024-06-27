@@ -45,3 +45,12 @@ void countingSort(int a[], int n, long long &comparison);
 void radixSort(int a[], int n, long long &comparison);
 void flashSort(int a[], int n, long long &comparison);
 
+
+//Data generator
+void GenerateRandomData(int a[], int n);
+void GenerateSortedData(int a[], int n);
+void GenerateReverseData(int a[], int n);
+void GenerateNearlySortedData(int a[], int n);
+void GenerateData(int a[], int n, int dataType);
+
+
