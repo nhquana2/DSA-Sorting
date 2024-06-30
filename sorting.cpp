@@ -477,7 +477,9 @@ void countingSort(int a[], int n, long long& comparison) {
     int minn = INT_MAX;
     for (int i = 0; ++comparison && i < n; i++) {
         maxx = max(maxx , a[i]);
+        ++comparison;
         minn = min(minn, a[i]);
+        ++comparison;
     }
     int range = maxx - minn + 1;
     int *c = new int[range + 1];
@@ -510,10 +512,26 @@ int getMax(int a[], int n)
             maxx = a[i];
     return maxx;
 }
+int getMax(int a[], int n, long long& comparison)
+{
+    int maxx = a[0];
+    for (int i = 1; ++comparison && i < n; i++)
+        if (a[i] > maxx)
+            maxx = a[i];
+    return maxx;
+}
 int getMin(int a[], int n)
 {
     int minn = a[0];
     for (int i = 1; i < n; i++)
+        if (a[i] < minn)
+            minn = a[i];
+    return minn;
+}
+int getMin(int a[], int n, long long& comparison)
+{
+    int minn = a[0];
+    for (int i = 1; ++comparison && i < n; i++)
         if (a[i] < minn)
             minn = a[i];
     return minn;
@@ -539,7 +557,7 @@ void countingSort(int a[], int n, int exp, int minn) {
     
     delete[] o;
 }
-void countingSort_cp(int a[], int n, int exp, int minn, long long& comparison) {
+void countingSort(int a[], int n, int exp, int minn, long long& comparison) {
     int* o = new int[n];
     int c[10] = {0};
     
@@ -580,7 +598,9 @@ void radixSort(int a[], int n) {
     delete[] shiftedArr;
 }
 void radixSort(int a[], int n, long long& comparison) {
-    int minn = getMin(a, n);
+     comparison = 0;
+
+    int minn = getMin(a, n, comparison);
     
     int* shiftedArr = new int[n];
     for (int i = 0; i < n; i++) {
@@ -588,9 +608,8 @@ void radixSort(int a[], int n, long long& comparison) {
     }
     
     int maxx = getMax(a, n);
-    comparison = 0;
     for (int exp = 1; ++comparison && maxx / exp > 0; exp *= 10)
-        countingSort_cp(shiftedArr, n, exp, minn, comparison);
+        countingSort(shiftedArr, n, exp, minn, comparison);
     
     for (int i = 0; i < n; i++) {
         a[i] = shiftedArr[i] + minn;
