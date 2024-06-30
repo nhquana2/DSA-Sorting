@@ -41,7 +41,6 @@ void selectionSort(int a[], int n, long long &comparison) {
     for (int i = 0; ++comparison && i < n - 1; i++) {
         int mn_index = i;
         for (int j = i + 1; ++comparison && j < n; j++) {
-            ++comparison;
             if (++comparison && a[j] < a[mn_index]) {
                 mn_index = j;
             }
