@@ -197,6 +197,7 @@ void processArg(int argc, char* argv[]) {
         file.close();
         cout << "Input file: " << input_path << "\n";
         cout << "Input size: " << n << "\n";
+        cout << "--------------------\n";
         processSort(algs, input_path, output_params);
     }
 
